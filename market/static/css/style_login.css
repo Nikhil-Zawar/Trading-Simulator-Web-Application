@@ -1,0 +1,40 @@
+body{
+    height: 100vh;
+    background: url(../images/bg5.jpg) repeat center center fixed;
+}
+.form-register{
+    /* position: absolute; */
+    top: 70px;
+    position: relative;
+    left: 35%;
+    /* min-width: 600px; */
+    text-align: center;
+    /* margin: 20px auto; */
+    width: 30%;
+}
+h1{
+    padding: 20px;
+    /* font-size:x-large; */
+}
+.custom-label{
+    position: relative;
+    text-align: left;
+    /* color:linear-gradient(#7a76ff, #7a76ff, #7a76ff); */
+}
+.btn{
+    cursor:pointer;
+    width: 30%;
+    background-image: linear-gradient(135deg, #7a76ff, #7a76ff, #7fe4ff);
+    box-sizing: border-box;
+    border: solid 1.5px transparent;
+    border-radius: 8px;
+    box-shadow: 2px 1000px 1px #0c0c0c inset;
+    transition: box-shadow 0.4s linear;
+
+}
+.btn:hover{
+    background-image: linear-gradient(#7a76ff, #7a76ff, #7a76ff);
+    border-color: #7a76ff;
+    box-shadow: none;
+
+}

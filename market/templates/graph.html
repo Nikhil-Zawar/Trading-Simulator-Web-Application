@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Graph</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="stock-graph"></div>
+
+    <script>
+        var graphDiv = document.getElementById('stock-graph');
+        graphDiv.innerHTML = '{{ plot|safe }}';
+    </script>
+</body>
+</html>

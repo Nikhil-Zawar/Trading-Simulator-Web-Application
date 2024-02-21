@@ -1,0 +1,87 @@
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #000000; 
+  color: #ffffff; 
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+}
+nav {
+  position: fixed;
+  min-width: 100%;
+  font-weight: 800;
+  font-size: large;
+  z-index: 1;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 17px;
+  position: relative;
+}
+
+.brand {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.5em;
+  padding-top: 1%;
+}
+
+.nav-links {
+  color: #2ec7cc;
+  display: flex;
+  gap: 30px;
+  margin: 0 15px;
+  padding-top: 10px;
+  cursor: pointer;
+}
+.nav-links > a {
+  color: aliceblue;
+  text-decoration: none;
+}
+.nav-links > a:hover {
+  color: #7a76ff;
+}
+.nav-links > div {
+  display: flex;
+  gap: 20px;
+}
+.left-column {
+  display: flex;
+  gap: 40px;
+}
+
+footer {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 700;
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+
+
+
+.container {
+  max-width: 600px;
+  font-weight: 800;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid #2ec7cc;
+  border-radius: 8px;
+  background-color: #000000;
+  position: relative;
+}
+h2{
+  text-align: center;
+}
+.user-details {
+  margin-bottom: 20px;
+}
+

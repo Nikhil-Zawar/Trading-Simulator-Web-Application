@@ -1,0 +1,363 @@
+body {
+  /* font-family: "Roboto", sans-serif; */
+  height: 130vh;
+  color: #fdfdfd; 
+  /* Light text color */
+    /* background: url(../images/bg5.jpg) repeat center center fixed; */
+  background-color: #000000 !important;
+  /* background-color: #000018; */
+
+}
+.toppers-container {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #000000;
+  position: absolute;
+  /* left:2.5%; */
+  top: 81px;
+  width: 100%;
+  height: 124%;
+}
+.bg {
+  /* background: url(../images/bg5.jpg) repeat center center fixed; */
+  border-radius: 10px;
+}
+h2 {
+  margin-bottom: 0 px;
+  margin-top: 12px;
+  font-weight: 800;
+}
+.first {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  background-color: #000000;
+
+}
+
+.second {
+  width: 48.5%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-e; */
+  gap : 10 px;
+}
+.third {
+  width: 25%;
+  padding: 8px;
+  padding-top: 2px;
+  justify-content: space-evenly;
+  background-color: #000000;
+
+}
+.upper {
+  /* background-color: aqua; */
+  /* flex-basis: 55%; */
+  height: 55%;
+  background-color: #000000;
+
+}
+.below {
+  /* flex-basis: 40%; */
+  /* background-color: rgb(255, 255, 255); */
+  height: 45%;
+  padding: 2px;
+  /* justify-content: space-around; */
+  /* gap : 40px; */
+  /* padding-bottom: px; */
+  background-color: #000000;
+
+}
+.top-gainer-container{
+  height : 37%;
+  background-color: #000000; /* Add your desired background color */
+  padding: 10px;
+  border-radius: 8px;
+  /* box-shadow: 0 0 10px #e3dfdfd3; */
+  margin-bottom: 60 px;
+}
+.top-loser-container{
+  height : 37%;
+  background-color: #000000; /* Add your desired background color */
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 60 px;
+
+  /* box-shadow: 0 0 10px #e3dfdfd3; */
+}
+
+.topper-title{
+  /* margin-bottom: 10 px; */
+  /* margin-top: 12px; */
+  font-weight: 800;
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#news-list {
+  list-style: none;
+  padding: 0;
+  font-size: small;
+}
+#news-list li {
+  /* margin-bottom: 10px; */
+  /* border-bottom: 1px solid #ccc; */
+  /* padding-bottom: 5px; */
+  color: #631D76;
+  background-color: #E0FBFC; /* Set background color */
+  border: 1px solid #ddd; /* Set border color */
+  border-radius: 8px; /* Add curved border */
+  box-shadow: 0 2px 4px #00ff4c; /* Add box shadow */
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#news-list li:hover{
+  /* color: #E5E7E6; */
+  background-color: #B80C09;
+   /* Change link color on hover */
+   transform: scale(1.05);
+  }
+
+#news-list a {
+  color: #631D76; /* Set the link color */
+  text-decoration: none;
+  font-weight: 400;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 16px;
+  transition: color 0.3s ease-in-out;
+}
+
+#news-list a:hover {
+  color: #E5E7E6;
+  /* background-color: #B80C09; */
+   /* Change link color on hover */
+   /* transform: scale(1.05); */
+  }
+#search{
+  width: 30%;
+}
+
+.search-dashboard{
+  height: 15%;
+}
+
+
+.list-elem-gainer {
+  height: 18%;
+ 
+  background-color: #ffffff;
+  margin-bottom: 10px; /* Add space between list elements */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 5px 5px 0px rgba(81, 255, 107, 0.582); /* Box shadow for a subtle lift effect */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.list-elem-loser {
+  height: 18%;
+  background-color: #ffffff;
+  margin-bottom: 10px; /* Add space between list elements */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 5px 5px 0px rgb(236, 87, 94); /* Box shadow for a subtle lift effect */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.list-elem-gainer .name{
+  font-weight: bold;
+  font-size: 20px; 
+  color : #00cf0e;
+}
+
+.list-elem-loser .name {
+  font-weight: bold;
+  font-size: 20px; 
+  color : #e10000;
+}
+
+
+.list-elem-loser .address {
+  font-size: 13px;
+  color : #e10000; /* Adjust color as needed */
+}
+
+.list-elem-gainer .address {
+  font-size: 13px;
+  color : #00cf0e; /* Adjust color as needed */
+}
+
+
+.list-elem-gainer,
+.list-elem-gainer a {
+  color: #ffffff; /* Text color for the gainer item */
+  text-decoration: none; /* Remove underline from links */
+  /* box-shadow: 5px 5px 0px rgba(94, 255, 62, 0.582); Box shadow for a subtle lift effect */
+}
+
+.list-elem-gainer:hover,
+.list-elem-gainer a:hover {
+  transform: scale(1.05);
+  color : #2E5339;
+  background-color: #9ef6b1; /* Change background color on hover */
+  color: #ffffff; /* Text color on hover */
+}
+
+.list-elem-loser,
+.list-elem-loser a {
+  color: #ffffff; /* Text color for the loser item */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.list-elem-loser:hover,
+.list-elem-loser a:hover {
+  transform: scale(1.05);
+  background-color: #f6c0c0; /* Change background color on hover */
+  color: #ffffff; /* Text color on hover */
+}
+
+.graph-container {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: 100%;
+  overflow: auto;
+  align-items: center;
+  text-align: center; /* This ensures that the graph won't overflow the container */
+  background-color: #000000;
+  border-radius: 8px;
+}
+
+/* ... (your existing styles) ... */
+
+.outer-horizontal-uparwala {
+  width: 95%;
+  align-items: center;
+  background-color: #7e079900;
+  height: 10%;
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  margin-bottom: 20 px;
+  border-radius: 8px; /* Add border-radius for rounded corners */
+  /* box-shadow: 0 10px 10px rgb(255, 255, 255); Add a subtle shadow effect */
+}
+
+.outer-horizontal-neechewala {
+  margin-top: 20px;
+  width: 95%;
+  align-items: center;
+  background-color: #7e079900;
+  height: 25%;
+  display: flex;
+  text-align: center;
+  /* justify-content: space-between; */
+  border-radius: 8px; /* Add border-radius for rounded corners */
+  /* box-shadow: 7px 7px 5px rgb(255, 255, 255); Add a subtle shadow effect */
+}
+
+.stock-name {
+  width: 25%; /* Adjust width as needed */
+  height: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px; /* Add rounded corners */
+  background-color: #7F0799; /* Dark background color */
+  color: #ffffff; /* Text color */
+}
+
+.series-symbol {
+  width: 60%; /* Adjust width as needed */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px;
+  border-radius: 8px; /* Add rounded corners */
+  background-color: #7F0799; /* Dark background color */
+  color: #ffffff; /* Text color */
+}
+
+.series {
+  height: 45%;
+  width: 100%;
+  justify-content: space-evenly;
+  /* align-items: center; */
+}
+
+.lower-inside-container-left {
+  width: 18%; /* Adjust width as needed */
+  justify-content: space-evenly;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px; /* Add rounded corners */
+  text-align: center;
+  font-size: 14px;
+  margin-right: 5px;
+  background-color: #7F0799; /* Dark background color */
+  color: #ffffff; /* Text color */
+}
+
+.lower-inside-container-left-pchange {
+  width: 18%; /* Adjust width as needed */
+  justify-content: space-evenly;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px; /* Add rounded corners */
+  text-align: center;
+  margin-right: 5px;
+
+  font-size: 14px;
+  background-color: #7F0799; /* Dark background color */
+  color: #ffffff; /* Text color */
+}
+
+.blk-right-blk {
+  width: 50%; /* Adjust width as needed */
+  height: 70%;
+  justify-content: space-evenly;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+  margin-right: 5px;
+
+  border-radius: 8px; /* Add rounded corners */
+  background-color: #7F0799; /* Dark background color */
+  color: #ffffff; /* Text color */
+}
+
+.right-ke-andar {
+  width: 100%;
+  align-items: center;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  font-size: 17px;
+  flex-direction: column;
+}
+
+.highlow {
+  align-items: center;
+  height: 30%;
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  justify-content: space-evenly;
+}
+

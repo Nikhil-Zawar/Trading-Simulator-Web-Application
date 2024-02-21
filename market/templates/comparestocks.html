@@ -1,0 +1,105 @@
+{% extends 'BaseAfterLogin.html' %}
+
+{%block head%}
+    <link rel="stylesheet" href="../static/css/style_comparestocks.css"/>
+
+{%endblock%}
+
+{%block title%}
+    Compare Stocks
+{%endblock%}
+
+{%block link%}
+    href="/register"
+ {%endblock%}
+
+ {% block profile %} <a href="/user_details" >{{ username }}</a> {% endblock %}
+
+ {% block logout %}<a href="/logout"> LOG OUT </a>{% endblock %}
+ 
+
+{%block content%}
+<div class="graph-container">
+  <div class="grid-items" id="griditem3">
+    <form action="/graph" method="post" id="stock-form">
+      <div class="first">
+        <div class="input0">
+          <label for="stock_symbol">Stock Symbols</label>
+          <input type="text" id="stock_symbol" name="stock_symbol" required />
+        </div>
+      </div>
+      <div class="second">
+        <div class="input1">
+          <label for="duration">Duration:</label>
+          <select id="duration" name="duration">
+            <option value="1w">1 Week</option>
+            <option value="1m">1 Month</option>
+            <option value="6m">6 Months</option>
+            <option value="1y">1 Year</option>
+            <option value="5y">5 Years</option>
+          </select>
+        </div>
+        <div class="input2">
+          <label for="stock_data">Data:</label>
+          <select id="stock_data" name="stock_data">
+            <option value="OPEN">Open</option>
+            <option value="CLOSE">close</option>
+            <option value="HIGH">high</option>
+            <option value="LOW">low</option>
+            <option value="LTP">ltp</option>
+            <option value="VOLUME">volume</option>
+            <option value="VALUE">value</option>
+            <option value="NO OF TRADES">No. of trades</option>
+          </select>
+        </div>
+        
+      </div>
+      
+      <div class="third">
+        <button type="button" id="show-graph-button">Show Graph</button>
+      </div>
+    </form>
+  </div>
+  <div class="grid-items form-section" id="griditem4">
+    <div class="graph">
+
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    
+    $("#stock-form").submit(function (event) {
+      event.preventDefault(); 
+
+      $.ajax({
+        type: "POST",
+        url: "/graph",
+        data: $("#stock-form").serialize(),
+        success: function (response) {
+          $(".graph").html(response);
+        },
+      });
+    });
+    $("#stock-form button").on("click", function () {
+          $("#stock-form").submit(); // Trigger the form submission when the button is clicked
+    });
+
+  });
+</script>
+<script>
+  function updateWidth(input) {
+    const newWidth = input.value.length * 10;
+    const minWidth = 200;
+    const maxWidth = 500;
+    input.style.width = Math.min(Math.max(newWidth, minWidth) , maxWidth) + 'px';
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const stockSymbolInput = document.getElementById('stock_symbol');
+    stockSymbolInput.addEventListener('input', function () {
+      updateWidth(this);
+    });
+  });
+</script>
+{%endblock%} 

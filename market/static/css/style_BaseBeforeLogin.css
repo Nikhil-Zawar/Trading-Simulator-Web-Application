@@ -1,0 +1,189 @@
+body {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #ffffff;
+  font-weight: bolder;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #000000;
+}
+
+nav {
+  background-color: #000003;
+  position: fixed;
+  min-width: 100%;
+  font-weight: 800;
+  font-size: large;
+  z-index: 1;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 17px;
+  position: relative;
+}
+
+.brand {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.5em;
+  padding-top: 1%;
+}
+
+.nav-links {
+  color: #2ec7cc;
+  display: flex;
+  gap: 30px;
+  margin: 0 15px;
+  padding-top: 10px;
+  cursor: pointer;
+}
+.nav-links > a {
+  color: aliceblue;
+  text-decoration: none;
+}
+.nav-links > a:hover {
+  color: #7a76ff;
+}
+.nav-links > div {
+  display: flex;
+  gap: 20px;
+}
+.left-column {
+  display: flex;
+  gap: 40px;
+}
+
+footer {
+  text-align: center;
+  font-size: 1.2rem;
+  background-color: #000003;
+  color: #fff;
+  height: 9.5%;
+  font-weight: 700;
+  margin-top: auto;
+  margin-bottom: 0px;
+  z-index: 2;
+}
+
+.form-section {
+  min-width: 400px;
+  position: relative;
+  margin-bottom: 0px;
+  padding: 20px;
+}
+
+form {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #ddd;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  cursor: text;
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: #282d33;
+
+  box-sizing: border-box;
+  background-color: #0c0c0c;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+input:hover {
+  border-color: #2ec7cc;
+}
+select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+select:hover {
+  border-color: #2ec7cc;
+}
+button {
+  padding: 12px 20px;
+  /* background-color: #2ecc71; */
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  border: solid 1.5px transparent;
+  border-radius: 8px;
+  font-family: Open Sans, sans-serif;
+  cursor: pointer;
+  box-shadow: 2px 1000px 1px #0c0c0c inset;
+  background-image: linear-gradient(135deg, #7a76ff, #7a76ff, #7fe4ff);
+  background-size: 200% 100%;
+  background-position: 99%;
+  transition: box-shadow 0.4s linear;
+}
+
+button:hover {
+  background-image: linear-gradient(#7a76ff, #7a76ff, #7a76ff);
+  box-shadow: none;
+}
+option {
+  background-color: #212121;
+}
+
+*/ .form-group {
+  margin-bottom: 15px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  /* border-color: #007bff; */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.form-container {
+  color: #ffffff;
+  min-width: 400px;
+  font-weight: 800;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0 auto;
+  padding: 15px;
+  border: 2px solid #2ec7cc;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.105);
+  text-align: center;
+  margin-top: 10%;
+  position: relative;
+  z-index: 2; /* Adjust the top margin to vertically center */
+}
+h2{
+  font-weight: bolder;
+}
+.form-register-container {
+  max-width: 40%;
+  margin: 30%;
+  padding: 15px;
+  border: 2px solid #2ec7cc; /* Add border to create a box */
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.721);
+  text-align: center;
+  margin-top: 6%;
+  position: relative;
+  z-index: 1; /* Adjust the top margin to vertically center */
+}

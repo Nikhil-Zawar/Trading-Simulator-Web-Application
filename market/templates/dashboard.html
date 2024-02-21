@@ -1,0 +1,201 @@
+{% extends 'BaseAfterLogin.html' %}
+{%block title%}
+Dashboard
+{%endblock%}
+{%block head%}
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" href="../static/css/style_dashboard.css" />
+{%endblock%}
+
+{% block profile %} <a href="/user_details">{{ username }}</a> {% endblock %}
+
+{% block logout %}<a href='/logout'> LOG OUT </a>{% endblock %}
+
+{%block content%}
+
+<div class="toppers-container">
+    <div class="first item bg">
+        <div class="top-gainer-container">
+            <div class="topper-title">Top Gainers</div>
+            {% for gainer in top_gainers %}
+            <a href="https://www.nseindia.com/get-quotes/equity?symbol={{ gainer['symbol'] }}" class="list-elem-gainer"
+                target="_blank">
+                <div class="name">{{ gainer['symbol'] }}</div>
+                <div class="address">
+                    Percentage Change : {{ gainer['pChange'] }} %
+                </div>
+                <div class="address">
+                    Change : Rs. {{gainer['change']}} , Last Price : {{gainer['lastPrice']}}
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+
+        <div class="top-loser-container">
+            <div class="topper-title">Top Losers</div>
+            {% for loser in top_losers|reverse %}
+            <a href="https://www.nseindia.com/get-quotes/equity?symbol={{ loser['symbol'] }}" class="list-elem-loser"
+                target="_blank">
+                <div class="name">{{ loser['symbol'] }}</div>
+                <div class="address">
+                    Percentage Change : {{ loser['pChange'] }} %
+                </div>
+                <div class="address">
+                    Change : Rs. {{loser['change']}} , Last Price : {{loser['lastPrice']}}
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="second item">
+
+
+        <div class="upper bg">
+            <div class="graph-container">
+                {{ graph_html|safe }}
+            </div>
+        </div>
+        <div class="below bg">
+            <div class="search-dashboard">
+                <form id="stockSearchForm">
+                    <input type="text" id="search" name="q" placeholder="Search" />
+                    <button type="button" onclick="searchStock()">Search</button>
+                </form>
+            </div>
+            <div class="outer-horizontal-uparwala">
+                <div class="stock-name" id="stockName">
+                    Stock Detials
+                </div>
+                <div class="series-symbol">
+                    <div class="series" id="stockSeries">
+                        Industry Type
+                    </div>
+                    <div class="series" id="stockSymbol">
+                        Symbol of the stock
+                    </div>
+                </div>
+            </div>
+            <div class="outer-horizontal-neechewala" id="stockInfo">
+                <div class="lower-inside-container-left-pchange">
+                    <div class="percentage-change"> Change </div>
+                    <div class="value-change">  </div>
+                </div>
+                <div class="lower-inside-container-left">
+                    <div class="current-price"> Current Price</div>
+                </div>
+                <div class="blk-right-blk">
+                    <div class="right-ke-andar">
+                        Intraday High-Low
+                    </div>
+                    <div class="right-ke-andar">
+                        <div class="highlow">
+                            <div class="intradayhigh"> High </div>
+                        </div>
+                        <div class="highlow">
+                            <div class="intradaylow"> Low </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blk-right-blk">
+                    <div class="right-ke-andar">
+                        52 Weeks(Year) High-Low
+                    </div>
+                    <div class="right-ke-andar">
+                        <div class="highlow">
+                            <div class="week52high">High</div>
+                        </div>
+                        <div class="highlow">
+                            <div class="week52low">Low </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="third item bg">
+        <h2>Business News</h2>
+        <ul id="news-list"></ul>
+    </div>
+</div>
+<div></div>
+<script>
+    $(document).ready(function () {
+        function fetchNews() {
+            $.ajax({
+                type: "GET",
+                url: "/get_news",
+                success: function (response) {
+                    displayNews(response);
+                },
+            });
+        }
+        function displayNews(news) {
+            var newsList = $("#news-list");
+            newsList.empty();
+
+            var maxHeadlines = 8;
+            for (var i = 0; i < Math.min(news.length, maxHeadlines); i++) {
+                var article = news[i];
+                var listItem = $("<li>");
+                listItem.html(
+                    `<a href="${article.url}" target="_blank">${article.title}</a>`
+                );
+                newsList.append(listItem);
+            }
+        }
+        fetchNews();
+        { graph_html | safe }
+    });
+
+    async function searchStock() {
+        var searchInput = document.getElementById("search").value;
+        const response = await fetch(`/get_stock_info?symbol=${searchInput}`);
+        const stockInfo = await response.json();
+        var stockNameDiv = document.getElementById("stockName");
+        stockNameDiv.innerHTML = `Name : ${stockInfo.name}`;
+        var stockSeriesDiv = document.getElementById("stockSeries");
+        stockSeriesDiv.innerHTML = `Industry : ${stockInfo.series}`;
+        var stockSymbolDiv = document.getElementById("stockSymbol");
+        stockSymbolDiv.innerHTML = `Symbol : ${stockInfo.symbol}`;
+        displayStockInfo(stockInfo)
+    }
+
+    function displayStockInfo(stockInfo) {
+    var stockInfoDiv = document.getElementById("stockInfo");
+    var percentageChangeDiv = document.querySelector('.lower-inside-container-left-pchange .percentage-change');
+    percentageChangeDiv.innerHTML = `Percentage Change: ${stockInfo.pChange}%`;
+    ntPriceDiv = document.querySelector('.lower-inside-container-left .current-price');
+    var valueChangeDiv = document.querySelector('.lower-inside-container-left-pchange .value-change');
+    valueChangeDiv.innerHTML = `Change : Rs. ${stockInfo.change}`;
+    var currentPriceDiv = document.querySelector('.lower-inside-container-left .current-price');
+    currentPriceDiv.innerHTML = `Last Price Rs. ${stockInfo.lastPrice}`;
+    var intradayHighDiv = document.querySelector('.right-ke-andar .intradayhigh');
+    intradayHighDiv.innerHTML = `High: Rs. ${stockInfo.intradayhigh}`;
+    var intradayLowDiv = document.querySelector('.blk-right-blk .right-ke-andar .intradaylow');
+    intradayLowDiv.innerHTML = `Low: Rs. ${stockInfo.intradaylow}`;
+    var week52HighDiv = document.querySelector('.right-ke-andar .week52high');
+    week52HighDiv.innerHTML = `High: Rs. ${stockInfo.week52high}`;
+    var week52LowDiv = document.querySelector('.right-ke-andar .week52low');
+    week52LowDiv.innerHTML = `Low: Rs. ${stockInfo.week52low}`;
+}
+
+
+</script>
+
+<!-- 
+q= {'symbol' : symbol,
+'name' : p['companyName'],
+'series' : p['industry'],
+'lastPrice' : q['lastPrice'],
+'pChange': round(q['pChange'], 3),
+'change': round(q['change'], 3),
+'intradaylow' : q['intraDayHighLow']['min'],
+'intradayhigh' : q['intraDayHighLow']['max'],
+'week52high' : q['weekHighLow']['min'],
+'week52high' : q['weekHighLow']['max'],
+}
+ -->
+
+
+
+{%endblock%}

@@ -1,0 +1,24 @@
+
+{% extends 'BaseAfterLogin.html' %}
+{% block head %}
+<link rel="stylesheet" href="../static/css/style_user_details.css">      
+{% endblock %}
+{% block title %}
+  User Details
+{% endblock %}
+{% block logout %}<a href="/logout"> LOG OUT </a>{% endblock %}
+{% block profile %} <a href="/user_details" >{{ username }}</a> {% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <h2>User Details</h2>
+    <div class="user-details">
+        <p><strong>Name:</strong> {{ name_user }} </p>
+        <p><strong>Username:</strong> {{ username }} </p>
+        <p><strong>Email Address:</strong> {{ email_address }}</p>
+        <p><strong>Mobile Number:</strong> {{ mobile }}</p>
+        <!-- Add more details as needed -->
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'BaseAfterLogin.html' %}
+{% block head %}
+<link rel="stylesheet" href="../static/css/style_market.css">      
+{% endblock %}
+{% block title %}
+  Market Page
+{% endblock %}
+{% block logout %}<a href="/logout"> LOG OUT </a>{% endblock %}
+{% block profile %} <a href="/user_details" >{{ username }}</a> {% endblock %}
+
+
+{% block content %}
+<br>
+<br><br>
+      <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <th  scope="col">Name</th>
+                <th  scope="col">Open</th>
+                <th  scope="col">High</th>
+                <th  scope="col">Low</th>
+                <th  scope="col">Close</th>
+                <th  scope="col">Series</th>
+                <th  scope="col">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+                <tr>
+                    <td >{{ item.SYMBOL }}</td>
+                    <td >{{ item.OPEN }}</td>
+                    <td >{{ item.HIGH }}</td>
+                    <td >{{ item.LOW }}</td>
+                    <td >{{ item.CLOSE }}</td>
+                    <td >{{ item.SERIES }}$</td>
+                    <td >
+                        <button class="btn btn-outline btn-info" onclick="window.location.href='https://www.nseindia.com/get-quotes/equity?symbol={{ item.SYMBOL }}'">More Info</button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

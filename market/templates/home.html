@@ -1,0 +1,26 @@
+{% extends 'BaseBeforeLogin.html' %}
+{% block head %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../static/css/style_home.css">
+{% endblock %}
+
+{% block title %}
+StockWyse
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="welcome-section">
+        <h1 class="welcome-text">Welcome to <span>StockWyse</span></h1>
+    </div>
+    <div class="info-section">
+        <h3 class="quote">"Navigate Markets with Confidence - StockWyse"</h3>
+    </div>
+    <div>
+        <button class="get-started-btn" onclick="window.location.href='/register'">
+            <h3>Get Started</h3>
+        </button>
+    </div>
+</div>
+
+{% endblock %}

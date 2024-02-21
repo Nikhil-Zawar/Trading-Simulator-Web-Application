@@ -1,0 +1,14 @@
+pip install
+flask
+flask_sqlalchemy
+python-dateutil
+plotly
+pandas
+jugaad-data
+--upgrade click
+requests
+os
+csv
+atexit
+datetime
+Werkzeug
