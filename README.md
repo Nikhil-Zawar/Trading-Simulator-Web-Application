@@ -1,4 +1,6 @@
 # StockWyse
+Stockwyse is a web application built by Nikhil Zawar, which simulates a platform for users to study about stock price variations, look at various market trends, compare various stocks and decide where to invest there money.
+The following is the description of the webiste built and various features it encloses.
 ----------
 ### StockWyse - Navigate Markets with Confidence
 ----
