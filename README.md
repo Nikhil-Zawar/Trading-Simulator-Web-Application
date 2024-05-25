@@ -1,3 +1,12 @@
+The following is a web application built by me and Mahir-Patel.
+This is a part of the course COP290 - Design Practices in Computer Science under Prof. Huzur Saran, at IIT Delhi.
+It is a trading simlutor, allowing user to create account and login, to monitor stock variations. The application utilises live stock data taken from the NSE website using the 'jugaad-data' library.
+The user dashboard includes information about top gainers, top losers and latest business news. Additional features are added to imporve the user accessibilty which are mentioned in this document.
+-------------
+To run the web application on local host:
+- Clone the repository and install all the requirements from requirements.txt
+- Run the 'app.py' python file in the 'market' directory.
+--------------
 # StockWyse
 Stockwyse is a web application built by Nikhil Zawar, which simulates a platform for users to study about stock price variations, look at various market trends, compare various stocks and decide where to invest there money.
 The following is the description of the webiste built and various features it encloses.
